@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
-import { Navigator } from 'expo-router';
+import { Navigator, Stack } from 'expo-router';
 import Slot = Navigator.Slot;
 
 import Header from '@/components/Header';
@@ -15,7 +15,11 @@ const RootLayout = () => {
       <View style={styles.contentApp}>
         <Header />
         <View style={styles.contentScreens}>
-          <Slot />
+          <Stack screenOptions={{ headerShown: false }}>
+            <Stack.Screen name={'index'} />
+            <Stack.Screen name={'profile'} />
+            <Stack.Screen name={'settings'} />
+          </Stack>
         </View>
         <Footer />
       </View>
