@@ -10,6 +10,7 @@ const NavigationButtons = () => {
       <View style={styles.containerButtons}>
         <NavigationButton label={'Settings'} route={'settings'} />
         <NavigationButton label={'Profile'} route={'profile'} />
+        <NavigationButton label={'Drawer'} route={'drawer'} />
       </View>
     </View>
   );
