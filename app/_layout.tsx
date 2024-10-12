@@ -4,8 +4,11 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
+import '../firebaseConfig';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
+import { getUsers } from '@/firebase/fbUsers';
+import { signupWithEmailPassword } from '@/firebase/fbAuth';
 
 // Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
@@ -21,6 +24,11 @@ export default function RootLayout() {
       SplashScreen.hideAsync();
     }
   }, [loaded]);
+
+  useEffect(() => {
+    getUsers().then();
+    signupWithEmailPassword('dentvega6@gmail.com', 'bvega123456').then();
+  }, []);
 
   if (!loaded) {
     return null;
