@@ -19,7 +19,12 @@ const CameraScreen = () => {
       </View>
     );
 
-  return <Camera style={StyleSheet.absoluteFill} device={device} isActive={true} />;
+  return (
+    <View style={{ flex: 1, backgroundColor: 'red' }}>
+      <Text style={{ color: '#fff', marginTop: 50 }}>This is the camera</Text>
+      <Camera style={StyleSheet.absoluteFill} device={device} isActive={true} />
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
