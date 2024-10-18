@@ -1,4 +1,5 @@
-import React from 'react';import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import React from 'react';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useRouter } from 'expo-router';
 
 interface FooterProps {
@@ -30,24 +31,25 @@ const Footer: React.FC<FooterProps> = ({title}) => {
 const styles = StyleSheet.create({
   footer: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'center',  
     alignItems: 'center',
     backgroundColor: '#075E54',
-    height: 60,
-    paddingHorizontal: 15,
-    position: 'absolute', 
-    bottom: 0, 
+    height:80,
+    bottom: 0,
     width: '100%',
   },
   buttonsContainer: {
     flexDirection: 'row',
     justifyContent: 'space-evenly',
-    alignItems: 'center',
+    flex: 1, 
+    width: '100%',
+    backgroundColor: '#075E54',
   },
   buttonText: {
     color: 'white',
+    fontWeight: 'bold',
     fontSize: 16,
-    marginLeft: 15,
+    paddingHorizontal: 10,  
   },
 });
 
